@@ -1,5 +1,15 @@
 # Eth backend Frontend app
 
+## Running the project
+
+```bash
+# Install Dependencies
+$ cd eth-frontend
+$ npm install
+$ npm run start
+
+```
+
 ```
 /auction_status
 
