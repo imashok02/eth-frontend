@@ -24,7 +24,7 @@ function App() {
     });
   }, []);
 
-  const handleInit = () => {
+  const handleInit = async () => {
     setConnected(true);
     getSignerObject().then(async ({ signer, contract }) => {
 
@@ -57,6 +57,7 @@ function App() {
   };
 
   const connectCallback = async () => {
+    window.location.reload();
     const { contract } = await connect();
     setContract(contract);
     if (contract) {
@@ -66,6 +67,7 @@ function App() {
 
   const logoutCallback = async () => {
     localStorage.removeItem("authToken");
+    window.location.reload();
     setIsLoggedIn(false);
   }
 

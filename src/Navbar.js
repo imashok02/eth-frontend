@@ -18,10 +18,13 @@ const NavbarTop = ({ isLoggedIn, logout, connect, connected, becomeMember, isMem
             {/* {!connected ? (
               <Button onClick={connect}>Connect to Metamask</Button>
             ) : (
-              <p style={{ color: "white" }}>Connected to Metamask.</p>
+              <p style={{ color: "white" }}>Connected to Metam
             )} */}
-            <div></div>
-            { isLoggedIn && connected ? (<Button onClick={logout}>Logout</Button>) : '' }
+            { localStorage.getItem('authToken') === null ? (<div style={{color: "red"}}>Not LOGGED IN</div>) : ('')}
+            
+
+            {/* <div style={{color: "red"}}>Token: {localStorage.getItem('authToken')}</div> */}
+            { localStorage.getItem('authToken') !== null ? (<Button onClick={logout}>Logout</Button>) : <Button onClick={connect}>Connect</Button> }
           </Nav>
         </Navbar.Collapse>
       </Container>
